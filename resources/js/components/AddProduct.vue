@@ -33,10 +33,9 @@
         methods: {
             addProduct() {
                 this.axios
-                    .post('http://localhost:8000/api/product/add', this.product)
+                    .post('http://localhost:8000/api/products', this.product)
                     .then(response => (
                         this.$router.push({name: 'home'})
-                        // console.log(response.data)
                     ))
                     .catch(error => console.log(error))
                     .finally(() => this.loading = false)

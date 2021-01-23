@@ -7,7 +7,8 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Author</th>
+                <th>Price</th>
+                <th>Detail</th>
                 <th>Created At</th>
                 <th>Updated At</th>
                 <th>Actions</th>
@@ -17,7 +18,8 @@
             <tr v-for="product in products" :key="product.id">
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
-                <td>{{ product.author }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.detail }}</td>
                 <td>{{ product.created_at }}</td>
                 <td>{{ product.updated_at }}</td>
                 <td>
@@ -42,7 +44,7 @@
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/products')
+                .get('http://localhost:8000/api/products/')
                 .then(response => {
                     this.products = response.data;
                 });
@@ -50,7 +52,7 @@
         methods: {
             deleteProduct(id) {
                 this.axios
-                    .delete(`http://localhost:8000/api/product/delete/${id}`)
+                    .delete(`http://localhost:8000/api/products/${id}`)
                     .then(response => {
                         let i = this.products.map(item => item.id).indexOf(id); // find index of your object
                         this.products.splice(i, 1)

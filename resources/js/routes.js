@@ -1,7 +1,7 @@
-import AllProducts from './components/IndexComponent.vue';
-import CreateProduct from './components/CreateComponent.vue';
-import EditProduct from './components/EditComponent.vue';
-import Home from './components/HomeComponent.vue'
+import AllProducts from './components/AllProducts.vue';
+import AddProduct from './components/AddProduct.vue';
+import EditProduct from './components/EditProduct.vue';
+// import Home from './components/HomeProduct.vue'
 
 export const routes = [
     {
@@ -10,9 +10,9 @@ export const routes = [
         component: AllProducts
     },
     {
-        name: 'create',
-        path: '/create',
-        component: CreateProduct
+        name: 'add',
+        path: '/add',
+        component: AddProduct
     },
     {
         name: 'edit',

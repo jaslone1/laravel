@@ -9,8 +9,12 @@
                         <input type="text" class="form-control" v-model="product.name">
                     </div>
                     <div class="form-group">
-                        <label>Author</label>
-                        <input type="text" class="form-control" v-model="product.author">
+                        <label>Price</label>
+                        <input type="text" class="form-control" v-model="product.price">
+                    </div>
+                    <div class="form-group">
+                        <label>Detail</label>
+                        <textarea class="form-control" v-model="product.detail"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Update Product</button>
                 </form>
@@ -28,16 +32,15 @@
         },
         created() {
             this.axios
-                .get(`http://localhost:8000/api/product/edit/${this.$route.params.id}`)
+                .get(`http://localhost:8000/api/products/${this.$route.params.id}`)
                 .then((response) => {
                     this.product = response.data;
-                    // console.log(response.data);
                 });
         },
         methods: {
             updateProduct() {
                 this.axios
-                    .post(`http://localhost:8000/api/product/update/${this.$route.params.id}`, this.product)
+                    .patch(`http://localhost:8000/api/products/${this.$route.params.id}`, this.product)
                     .then((response) => {
                         this.$router.push({name: 'home'});
                     });

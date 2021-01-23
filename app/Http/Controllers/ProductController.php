@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Http\Respone;
+use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
@@ -28,8 +28,7 @@ class ProductController extends Controller
         return response()->json('Product created!');
     }
 
-
-    public function edit($id)
+    public function show($id)
     {
         $product = Product::find($id);
         return response()->json($product);

@@ -8,13 +8,15 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "postinstall": "npm run prod"
+        "postinstall": "npm run prod",
+        "heroku-prebuild": "npm install -f",
+        "heroku-postbuild": "npm run production"
     },
     "devDependencies": {
         "axios": "^0.21",
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.11",
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
         "postcss": "^8.1.14",
@@ -27,8 +29,9 @@
     },
     "dependencies": {
         "cors": "^2.8.5",
+        "nodejs": "0.0.0",
         "vue-axios": "^3.2.2",
-        "vue-router": "^3.4.9",
+        "vue-router": "^3.5.1",
         "vuex": "^3.6.2"
     }
 }

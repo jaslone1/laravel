@@ -1,26 +1,36 @@
 <template>
-  <form action="#">
-    <div>
-      <label for="email">Email address</label>
-      <input type="text" name="email" id="email">
+      <div>
+      <form class="login" @submit.prevent="login">
+        <h1>Sign in</h1>
+        <label>Username</label>
+        <input required v-model="username" type="username" placeholder="Username"/>
+        <label>Password</label>
+        <input required v-model="password" type="password" placeholder="Password"/>
+        <hr/>
+        <button type="submit">Login</button>
+      </form>
     </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="text" name="password" id="password">
-    </div>
-    <div>
-      <button type="submit">
-        Sign in
-      </button>
-    </div>
-  </form>
 </template>
 
 <script>
-  export default {
-    name: 'Home',
-    components: {
-      //
+    export default {
+        data() {
+            return {
+                    username: "",
+                    password: ""
+            }
+        },
+        methods: {
+            login: function () {
+              let username = this.username
+              let password = this.password
+              this.$store.dispatch('login', { username, password})
+              .then(response => (
+                this.$router.push({name: 'home'})
+                ))
+              .catch(err => console.log(err))
+            }
+        }
     }
-  }
+
 </script>

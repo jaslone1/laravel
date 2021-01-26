@@ -11,15 +11,15 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required', 'username'],
             'password' => ['required']
         ]);
 
-        if (Auth::attempt($request->only('email', 'password'))){
+        if (Auth::attempt($request->only('username', 'password'))){
             return response()->json(Auth::user(), 200);
         }
         throw ValidationException::withMessages([
-            'email' =>['The provided credentials are incorect.']
+            'username' =>['The provided credentials are incorect.']
         ]);
     }
     public function logout()

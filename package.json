@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "cors": "^2.8.5",
-        "nodejs": "0.0.0",
+        "node": "^15.4.0",
         "vue-axios": "^3.2.2",
         "vue-router": "^3.5.1",
         "vuex": "^3.6.2"

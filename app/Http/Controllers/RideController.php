@@ -19,7 +19,7 @@ class RideController extends Controller
         $ride = new Ride([
             'leader' => $request->input('leader'),
             'type' => $request->input('type'),
-            'departure_time' => $request->input('departure'),
+            'departure_time' => $request->input('departure_time'),
             'departure_location' => $request->input('departure_location'),
             'miles' => $request->input('miles'),
             'intensity' => $request->input('intensity'),
@@ -29,6 +29,11 @@ class RideController extends Controller
         $ride->save();
 
         return response()->json('Ride created!');
+    }
+    public function show($id)
+    {
+        $ride = Ride::find($id);
+        return response()->json($ride);
     }
 
     public function update($id, Request $request)

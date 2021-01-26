@@ -27,6 +27,11 @@ class BikeController extends Controller
 
       return response()->json('Bike created!');
   }
+  public function show($id)
+  {
+      $bike = Bike::find($id);
+      return response()->json($bike);
+  }
 
   public function update($id, Request $request)
   {

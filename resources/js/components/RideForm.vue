@@ -3,7 +3,7 @@
         <h3 class="text-center">Add Ride</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="RideForm">
+                <form @submit.prevent="addRide">
                     <div class="form-group">
                         <label>Ride Leader</label>
                         <input type="text" class="form-control" v-model="ride.leader">
@@ -11,10 +11,6 @@
                     <div class="form-group">
                         <label>Type</label>
                         <input type="text" class="form-control" v-model="ride.type">
-                    </div>
-                    <div class="form-group">
-                        <label>Brand</label>
-                        <input type="text" class="form-control" v-model="ride.brand">
                     </div>
                     <div class="form-group">
                         <label>Departure Time:</label>
@@ -25,7 +21,7 @@
                         <input type="text" class="form-control" v-model="ride.departure_location">
                     </div>
                     <div class="form-group">
-                        <label>miles:</label>
+                        <label>Miles:</label>
                         <input type="text" class="form-control" v-model="ride.miles">
                     </div>
                     <div class="form-group">
@@ -62,3 +58,4 @@
             }
         }
     }
+</script>

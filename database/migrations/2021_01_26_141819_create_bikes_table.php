@@ -14,13 +14,13 @@ class CreateBikesTable extends Migration
     public function up()
     {
         Schema::create('bikes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('owner');
-            $table->string('email');
-            $table->string('brand');
-            $table->string('model');
-            $table->text('maintenance');
-            $table->timestamps();
+          $table->bigIncrements('id');
+          $table->string('owner');
+          $table->string('email');
+          $table->string('brand');
+          $table->string('model');
+          $table->text('maintenance');
+          $table->timestamps();
         });
     }
 

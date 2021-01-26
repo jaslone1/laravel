@@ -3,7 +3,7 @@
         <h3 class="text-center">Add Bike</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="BikeForm">
+                <form @submit.prevent="addBike">
                     <div class="form-group">
                         <label>Owner Name</label>
                         <input type="text" class="form-control" v-model="bike.owner">
@@ -50,3 +50,4 @@
             }
         }
     }
+</script>

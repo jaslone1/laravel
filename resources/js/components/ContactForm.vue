@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <h3 class="text-center">Send Jared a Message</h3>
     <form @submit.prevent="addContact" >
       <div class="form-group">
